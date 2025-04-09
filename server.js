@@ -34,7 +34,9 @@ wss.on("connection", (ws, req) => {
     jobQueue[jobId].socket = ws;
     console.log(`Client connected for job: ${jobId}`);
 });
-
+app.post("/ping", (req,res)=>{
+    res.send("Pong")
+})
 // Upload API - Accepts a video file
 app.post("/upload/:outputFormat", upload.single("video"), (req, res) => {
     if (!req.file) return res.status(400).json({ error: "No file uploaded" });
