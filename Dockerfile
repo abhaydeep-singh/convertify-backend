@@ -15,6 +15,9 @@ RUN npm install
 # Copy rest of the app
 COPY . .
 
+# Create folders for uploads and converted files
+RUN mkdir -p uploads converted
+
 # Expose app port
 EXPOSE 5000
 

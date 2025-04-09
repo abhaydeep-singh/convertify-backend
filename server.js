@@ -10,6 +10,8 @@ const port = 5000;
 
 // Enable CORS for all routes
 app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 
 // Setup storage for uploaded files
